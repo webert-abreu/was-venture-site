@@ -86,6 +86,14 @@
         mask-composite: exclude;
         pointer-events: none;
       }
+      /* Esconder barra de scroll para carrosséis se necessário */
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
     </style>
   </head>
   <body class="antialiased min-h-screen flex flex-col items-center py-16 px-4">
@@ -97,15 +105,15 @@
 
       <!-- Cabeçalho Perfil -->
       <div class="flex flex-col items-center text-center mb-10 relative z-10">
-        <!-- Imagem a puxar da pasta local 'assets' -->
+        <!-- Imagem puxada da pasta local 'assets' -->
         <img
-          src="assets/webert-abreu.png"
+          src="assets/profile.jpg"
           alt="Webert Abreu"
           class="w-20 h-20 rounded-full object-cover mb-5 ring-1 ring-white/10 bg-[#111]"
         />
 
         <h1 class="text-2xl font-semibold tracking-tight mb-2">Webert Abreu</h1>
-        <p class="text-saas-textMuted text-sm mb-4">
+        <p class="text-saas-textMuted text-sm mb-4 leading-relaxed">
           Founder @ WAS Venture. Construindo SaaS e partilhando a jornada como
           Indie Hacker.
         </p>
@@ -113,11 +121,11 @@
         <!-- Badges -->
         <div class="flex items-center gap-2">
           <span
-            class="px-2.5 py-1 rounded-full border border-white/10 bg-white/5 text-[10px] font-medium text-white/80"
+            class="px-2.5 py-1 rounded-full border border-white/10 bg-white/5 text-[10px] font-medium text-white/80 tracking-wide uppercase"
             >Indie Hacker</span
           >
           <span
-            class="px-2.5 py-1 rounded-full border border-white/10 bg-white/5 text-[10px] font-medium text-white/80"
+            class="px-2.5 py-1 rounded-full border border-white/10 bg-white/5 text-[10px] font-medium text-white/80 tracking-wide uppercase"
             >Software House</span
           >
         </div>
@@ -129,13 +137,13 @@
         <a
           href="https://wa.me/55981590392"
           target="_blank"
-          class="button-glow block w-full bg-white text-black font-semibold text-sm py-4 rounded-xl text-center hover:bg-gray-100 transition-colors mb-6 shadow-[0_0_20px_rgba(255,255,255,0.1)]"
+          class="button-glow block w-full bg-white text-black font-bold text-sm py-4 rounded-xl text-center hover:bg-gray-100 transition-all mb-6 shadow-[0_0_20px_rgba(255,255,255,0.1)] active:scale-95"
         >
           Iniciar Conversa no WhatsApp
         </a>
 
         <p
-          class="text-[10px] uppercase tracking-widest text-saas-textMuted font-semibold pl-1 mb-2 mt-4"
+          class="text-[10px] uppercase tracking-[0.2em] text-saas-textMuted font-bold pl-1 mb-2 mt-4"
         >
           Ecossistema
         </p>
@@ -144,7 +152,7 @@
         <a
           href="https://www.wasventure.com.br"
           target="_blank"
-          class="linear-card rounded-xl p-4 flex items-center justify-between group"
+          class="linear-card rounded-xl p-4 flex items-center justify-between group active:scale-[0.98]"
         >
           <div class="flex items-center gap-4">
             <div
@@ -158,8 +166,8 @@
             </div>
           </div>
           <i
-            data-lucide="arrow-right"
-            class="w-4 h-4 text-saas-textMuted group-hover:text-white transition-colors group-hover:translate-x-1"
+            data-lucide="arrow-up-right"
+            class="w-4 h-4 text-saas-textMuted group-hover:text-white transition-colors"
           ></i>
         </a>
 
@@ -167,7 +175,7 @@
         <a
           href="https://www.crmcorretorpro.com.br"
           target="_blank"
-          class="linear-card rounded-xl p-4 flex items-center justify-between group"
+          class="linear-card rounded-xl p-4 flex items-center justify-between group active:scale-[0.98]"
         >
           <div class="flex items-center gap-4">
             <div
@@ -183,16 +191,16 @@
             </div>
           </div>
           <i
-            data-lucide="arrow-right"
-            class="w-4 h-4 text-saas-textMuted group-hover:text-white transition-colors group-hover:translate-x-1"
+            data-lucide="arrow-up-right"
+            class="w-4 h-4 text-saas-textMuted group-hover:text-white transition-colors"
           ></i>
         </a>
 
-        <!-- Link: Serviços (Redireciona para o WhatsApp com mensagem) -->
+        <!-- Link: Biolink para Corretores (vai para o WhatsApp) -->
         <a
-          href="https://wa.me/55981590392?text=Ol%C3%A1%20Webert%2C%20gostaria%20de%20saber%20mais%20sobre%20a%20cria%C3%A7%C3%A3o%20de%20um%20Biolink%20para%20o%20meu%20perfil!"
+          href="https://wa.me/55981590392?text=Ol%C3%A1%20Webert%2C%20gostaria%20de%20saber%20mais%20sobre%20o%20Biolink%20para%20Corretores!"
           target="_blank"
-          class="linear-card rounded-xl p-4 flex items-center justify-between group"
+          class="linear-card rounded-xl p-4 flex items-center justify-between group active:scale-[0.98]"
         >
           <div class="flex items-center gap-4">
             <div
@@ -210,8 +218,8 @@
             </div>
           </div>
           <i
-            data-lucide="arrow-right"
-            class="w-4 h-4 text-saas-textMuted group-hover:text-white transition-colors group-hover:translate-x-1"
+            data-lucide="arrow-up-right"
+            class="w-4 h-4 text-saas-textMuted group-hover:text-white transition-colors"
           ></i>
         </a>
       </div>
@@ -220,14 +228,14 @@
       <div class="mt-8 w-full relative z-10">
         <div class="flex items-center justify-between pl-1 mb-3">
           <p
-            class="text-[10px] uppercase tracking-widest text-saas-textMuted font-semibold"
+            class="text-[10px] uppercase tracking-[0.2em] text-saas-textMuted font-bold"
           >
             Vídeo em Destaque
           </p>
           <a
             href="https://www.youtube.com/@WebertAbreu?sub_confirmation=1"
             target="_blank"
-            class="text-[10px] text-red-500 hover:text-red-400 font-semibold flex items-center gap-1 transition-colors"
+            class="text-[10px] text-red-500 hover:text-red-400 font-bold flex items-center gap-1 transition-colors uppercase"
           >
             <i data-lucide="youtube" class="w-3 h-3"></i> Inscrever-se
           </a>
@@ -236,25 +244,19 @@
         <a
           href="https://www.youtube.com/watch?v=zmBQswwF6AY"
           target="_blank"
-          class="linear-card rounded-xl p-4 flex flex-col gap-3 group"
+          class="linear-card rounded-xl p-4 flex flex-col gap-3 group active:scale-[0.99]"
         >
-          <!-- Container do Vídeo -->
           <div
             class="w-full h-40 bg-[#111] rounded-lg border border-white/5 flex flex-col items-center justify-center relative overflow-hidden"
           >
-            <!-- Overlay Escuro no Hover -->
             <div
               class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"
             ></div>
-
-            <!-- Thumbnail Dinâmica via URL nativa do Youtube (ID do vídeo: zmBQswwF6AY) -->
             <img
               src="https://img.youtube.com/vi/zmBQswwF6AY/maxresdefault.jpg"
-              alt="Thumbnail Youtube"
+              alt="Thumbnail Vídeo"
               class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
             />
-
-            <!-- Botão Play com Efeito Glow -->
             <div
               class="w-12 h-12 bg-red-600/90 backdrop-blur-sm rounded-full flex items-center justify-center relative z-20 shadow-[0_0_20px_rgba(220,38,38,0.5)] group-hover:scale-110 transition-transform"
             >
@@ -264,8 +266,6 @@
               ></i>
             </div>
           </div>
-
-          <!-- Textos do Vídeo -->
           <div>
             <h3
               class="font-medium text-sm text-white leading-tight mb-1.5 group-hover:text-red-400 transition-colors"
@@ -273,7 +273,9 @@
               Nunca mais uso React puro (a decisão mais difícil da minha
               carreira)
             </h3>
-            <p class="text-[11px] text-saas-textMuted line-clamp-2">
+            <p
+              class="text-[11px] text-saas-textMuted line-clamp-2 leading-relaxed"
+            >
               Por que decidi "matar" o React puro e reescrever o CRM Corretor
               Pro do absoluto zero.
             </p>
@@ -285,14 +287,14 @@
       <div class="mt-8 w-full relative z-10">
         <div class="flex items-center justify-between pl-1 mb-3">
           <p
-            class="text-[10px] uppercase tracking-widest text-saas-textMuted font-semibold"
+            class="text-[10px] uppercase tracking-[0.2em] text-saas-textMuted font-bold"
           >
             Open Source
           </p>
           <a
             href="https://github.com/webert-abreu"
             target="_blank"
-            class="text-[10px] text-white hover:text-gray-300 font-semibold flex items-center gap-1 transition-colors"
+            class="text-[10px] text-white/60 hover:text-white font-bold flex items-center gap-1 transition-colors uppercase"
           >
             <i data-lucide="github" class="w-3 h-3"></i> Seguir Perfil
           </a>
@@ -301,106 +303,130 @@
         <a
           href="https://github.com/webert-abreu"
           target="_blank"
-          class="linear-card rounded-xl p-4 flex flex-col gap-4 group"
+          class="linear-card rounded-xl p-4 flex flex-col gap-4 group active:scale-[0.99]"
         >
           <div class="flex items-start gap-3">
-            <!-- Puxa a tua foto oficial direto da API do GitHub -->
             <img
               src="https://github.com/webert-abreu.png"
-              alt="Webert Abreu GitHub"
+              alt="GitHub Profile"
               class="w-10 h-10 rounded-full border border-white/10 group-hover:border-white/30 transition-colors"
             />
             <div class="flex-1">
-              <h3
-                class="font-medium text-sm text-white flex items-center justify-between"
-              >
-                webert-abreu
+              <div class="flex items-center justify-between">
+                <h3 class="font-medium text-sm text-white">webert-abreu</h3>
                 <i
                   data-lucide="external-link"
                   class="w-3 h-3 text-saas-textMuted group-hover:text-white transition-colors"
                 ></i>
-              </h3>
-              <p class="text-[11px] text-saas-textMuted mt-0.5">
-                Explorando código, criando SaaS e construindo ferramentas.
+              </div>
+              <p class="text-[11px] text-saas-textMuted mt-0.5 leading-relaxed">
+                Explorando código, criando SaaS e construindo ferramentas de
+                alto impacto.
               </p>
             </div>
           </div>
 
-          <!-- Gráfico de Contribuições (Estilo GitHub Green Squares) -->
+          <!-- Stats Row -->
+          <div
+            class="flex items-center gap-6 border-y border-white/5 py-3 pl-1"
+          >
+            <div class="flex flex-col">
+              <span class="text-xs font-bold text-white">12</span>
+              <span
+                class="text-[9px] text-saas-textMuted uppercase tracking-wider"
+                >Repositórios</span
+              >
+            </div>
+            <div class="flex flex-col">
+              <span class="text-xs font-bold text-white">45</span>
+              <span
+                class="text-[9px] text-saas-textMuted uppercase tracking-wider"
+                >Seguidores</span
+              >
+            </div>
+            <div class="flex flex-col">
+              <span class="text-xs font-bold text-white">128</span>
+              <span
+                class="text-[9px] text-saas-textMuted uppercase tracking-wider"
+                >Estrelas</span
+              >
+            </div>
+          </div>
+
+          <!-- Simulated Contribution Graph -->
           <div
             class="w-full bg-[#050505] rounded-lg border border-white/5 p-3 overflow-hidden"
           >
-            <p class="text-[9px] text-saas-textMuted mb-2">Atividade Recente</p>
-            <div class="flex gap-1">
+            <p
+              class="text-[9px] text-saas-textMuted mb-2 font-bold uppercase tracking-[0.1em]"
+            >
+              Atividade GitHub
+            </p>
+            <div class="flex gap-1 justify-between">
               <div class="flex flex-col gap-1">
-                <div class="w-2.5 h-2.5 rounded-sm bg-white/5"></div>
-                <div class="w-2.5 h-2.5 rounded-sm bg-emerald-500/30"></div>
-                <div class="w-2.5 h-2.5 rounded-sm bg-emerald-500/80"></div>
+                <div class="w-3 h-3 rounded-sm bg-white/5"></div>
+                <div class="w-3 h-3 rounded-sm bg-emerald-500/30"></div>
+                <div class="w-3 h-3 rounded-sm bg-emerald-500/80"></div>
               </div>
               <div class="flex flex-col gap-1">
-                <div class="w-2.5 h-2.5 rounded-sm bg-emerald-500/50"></div>
-                <div class="w-2.5 h-2.5 rounded-sm bg-white/5"></div>
-                <div class="w-2.5 h-2.5 rounded-sm bg-emerald-500/90"></div>
+                <div class="w-3 h-3 rounded-sm bg-emerald-500/50"></div>
+                <div class="w-3 h-3 rounded-sm bg-white/5"></div>
+                <div class="w-3 h-3 rounded-sm bg-emerald-500/90"></div>
               </div>
               <div class="flex flex-col gap-1">
-                <div class="w-2.5 h-2.5 rounded-sm bg-white/5"></div>
-                <div class="w-2.5 h-2.5 rounded-sm bg-emerald-500/30"></div>
-                <div class="w-2.5 h-2.5 rounded-sm bg-white/5"></div>
+                <div class="w-3 h-3 rounded-sm bg-white/5"></div>
+                <div class="w-3 h-3 rounded-sm bg-emerald-500/30"></div>
+                <div class="w-3 h-3 rounded-sm bg-white/5"></div>
               </div>
               <div class="flex flex-col gap-1">
-                <div class="w-2.5 h-2.5 rounded-sm bg-emerald-500/90"></div>
-                <div class="w-2.5 h-2.5 rounded-sm bg-emerald-500/60"></div>
-                <div class="w-2.5 h-2.5 rounded-sm bg-emerald-500/20"></div>
+                <div class="w-3 h-3 rounded-sm bg-emerald-500/90"></div>
+                <div class="w-3 h-3 rounded-sm bg-emerald-500/60"></div>
+                <div class="w-3 h-3 rounded-sm bg-emerald-500/20"></div>
               </div>
               <div class="flex flex-col gap-1">
-                <div class="w-2.5 h-2.5 rounded-sm bg-white/5"></div>
-                <div class="w-2.5 h-2.5 rounded-sm bg-white/5"></div>
-                <div class="w-2.5 h-2.5 rounded-sm bg-emerald-500/50"></div>
+                <div class="w-3 h-3 rounded-sm bg-white/5"></div>
+                <div class="w-3 h-3 rounded-sm bg-white/5"></div>
+                <div class="w-3 h-3 rounded-sm bg-emerald-500/50"></div>
               </div>
               <div class="flex flex-col gap-1">
-                <div class="w-2.5 h-2.5 rounded-sm bg-emerald-500/60"></div>
-                <div class="w-2.5 h-2.5 rounded-sm bg-white/5"></div>
-                <div class="w-2.5 h-2.5 rounded-sm bg-white/5"></div>
+                <div class="w-3 h-3 rounded-sm bg-emerald-500/60"></div>
+                <div class="w-3 h-3 rounded-sm bg-white/5"></div>
+                <div class="w-3 h-3 rounded-sm bg-white/5"></div>
               </div>
               <div class="flex flex-col gap-1">
-                <div class="w-2.5 h-2.5 rounded-sm bg-emerald-500/90"></div>
-                <div class="w-2.5 h-2.5 rounded-sm bg-emerald-500/80"></div>
-                <div class="w-2.5 h-2.5 rounded-sm bg-emerald-500/40"></div>
+                <div class="w-3 h-3 rounded-sm bg-emerald-500/90"></div>
+                <div class="w-3 h-3 rounded-sm bg-emerald-500/80"></div>
+                <div class="w-3 h-3 rounded-sm bg-emerald-500/40"></div>
               </div>
               <div class="flex flex-col gap-1">
-                <div class="w-2.5 h-2.5 rounded-sm bg-white/5"></div>
-                <div class="w-2.5 h-2.5 rounded-sm bg-white/5"></div>
-                <div class="w-2.5 h-2.5 rounded-sm bg-white/5"></div>
+                <div class="w-3 h-3 rounded-sm bg-white/5"></div>
+                <div class="w-3 h-3 rounded-sm bg-white/5"></div>
+                <div class="w-3 h-3 rounded-sm bg-white/5"></div>
               </div>
               <div class="flex flex-col gap-1">
-                <div class="w-2.5 h-2.5 rounded-sm bg-emerald-500/30"></div>
-                <div class="w-2.5 h-2.5 rounded-sm bg-white/5"></div>
-                <div class="w-2.5 h-2.5 rounded-sm bg-emerald-500/90"></div>
+                <div class="w-3 h-3 rounded-sm bg-emerald-500/30"></div>
+                <div class="w-3 h-3 rounded-sm bg-white/5"></div>
+                <div class="w-3 h-3 rounded-sm bg-emerald-500/90"></div>
               </div>
               <div class="flex flex-col gap-1">
-                <div class="w-2.5 h-2.5 rounded-sm bg-white/5"></div>
-                <div class="w-2.5 h-2.5 rounded-sm bg-emerald-500/60"></div>
-                <div class="w-2.5 h-2.5 rounded-sm bg-white/5"></div>
+                <div class="w-3 h-3 rounded-sm bg-white/5"></div>
+                <div class="w-3 h-3 rounded-sm bg-emerald-500/60"></div>
+                <div class="w-3 h-3 rounded-sm bg-white/5"></div>
               </div>
               <div class="flex flex-col gap-1">
-                <div class="w-2.5 h-2.5 rounded-sm bg-emerald-500/90"></div>
-                <div class="w-2.5 h-2.5 rounded-sm bg-emerald-500/80"></div>
-                <div class="w-2.5 h-2.5 rounded-sm bg-white/5"></div>
+                <div class="w-3 h-3 rounded-sm bg-emerald-500/90"></div>
+                <div class="w-3 h-3 rounded-sm bg-emerald-500/80"></div>
+                <div class="w-3 h-3 rounded-sm bg-white/5"></div>
               </div>
               <div class="flex flex-col gap-1">
-                <div class="w-2.5 h-2.5 rounded-sm bg-white/5"></div>
-                <div class="w-2.5 h-2.5 rounded-sm bg-emerald-500/20"></div>
-                <div class="w-2.5 h-2.5 rounded-sm bg-emerald-500/50"></div>
+                <div class="w-3 h-3 rounded-sm bg-white/5"></div>
+                <div class="w-3 h-3 rounded-sm bg-emerald-500/20"></div>
+                <div class="w-3 h-3 rounded-sm bg-emerald-500/50"></div>
               </div>
               <div class="flex flex-col gap-1">
-                <div class="w-2.5 h-2.5 rounded-sm bg-emerald-500/70"></div>
-                <div class="w-2.5 h-2.5 rounded-sm bg-emerald-500/90"></div>
-                <div class="w-2.5 h-2.5 rounded-sm bg-emerald-500/60"></div>
-              </div>
-              <div class="flex flex-col gap-1">
-                <div class="w-2.5 h-2.5 rounded-sm bg-white/5"></div>
-                <div class="w-2.5 h-2.5 rounded-sm bg-white/5"></div>
-                <div class="w-2.5 h-2.5 rounded-sm bg-emerald-500/30"></div>
+                <div class="w-3 h-3 rounded-sm bg-emerald-500/70"></div>
+                <div class="w-3 h-3 rounded-sm bg-emerald-500/90"></div>
+                <div class="w-3 h-3 rounded-sm bg-emerald-500/60"></div>
               </div>
             </div>
           </div>
@@ -408,9 +434,9 @@
       </div>
 
       <!-- Rodapé Simples -->
-      <div class="mt-12 text-center relative z-10">
-        <p class="text-[10px] text-saas-textMuted">
-          © 2026 WAS Venture. All rights reserved.
+      <div class="mt-16 text-center relative z-10 border-t border-white/5 pt-8">
+        <p class="text-[10px] text-saas-textMuted uppercase tracking-widest">
+          © 2026 WAS Venture. Built by Webert Abreu.
         </p>
       </div>
     </div>
