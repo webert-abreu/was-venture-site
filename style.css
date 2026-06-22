@@ -2,9 +2,9 @@
    1. CONFIGURAÇÕES GERAIS E VARIÁVEIS
    ========================================= */
 :root {
-  /* Paleta WAS Select Dark Premium */
-  --bg: #03080a;
-  --bg-dark: #020405;
+  /* Paleta WAS Select Alto Padrão */
+  --bg: #0c181a; /* Dark Carbon */
+  --bg-dark: #081112;
   --surface: rgba(255, 255, 255, 0.03);
   --surface-hover: rgba(255, 255, 255, 0.06);
   --glass: rgba(255, 255, 255, 0.03);
@@ -12,16 +12,23 @@
   --border: rgba(255, 255, 255, 0.08);
   --border-highlight: rgba(255, 255, 255, 0.15);
 
-  --primary: #61a4ac; /* Teal */
-  --primary-glow: rgba(97, 164, 172, 0.4);
+  --primary: #68a6a6; /* Matte Gold / Champagne */
+  --primary-glow: rgba(104, 166, 166, 0.2);
+
+  /* Light Theme Colors */
+  --bg-light: #f8f9fa; /* Off-white/Bege claro */
+  --surface-light: #ffffff;
+  --border-light: #e0e0e0;
+  --text-light-main: #222222;
+  --text-light-muted: #666666;
 
   /* Tema Education */
-  --gold: #fbbf24;
-  --gold-glow: rgba(251, 191, 36, 0.4);
-  --bg-edu: #0a0500;
+  --gold: #68a6a6;
+  --gold-glow: rgba(104, 166, 166, 0.2);
+  --bg-edu: #0a0a0a;
 
-  --text-main: #ededed;
-  --text-muted: #888888;
+  --text-main: #ffffff;
+  --text-muted: #999999;
 
   --font: "Inter Tight", sans-serif;
   --max-width: 1100px;
@@ -62,17 +69,17 @@ video {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #03080a;
+  background: var(--bg);
 }
 ::-webkit-scrollbar-thumb {
-  background: #22585e;
+  background: #333;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #61a4ac;
+  background: var(--primary);
 }
 ::selection {
-  background: rgba(97, 164, 172, 0.3);
+  background: rgba(104, 166, 166, 0.3);
   color: #fff;
 }
 
@@ -96,14 +103,14 @@ video {
 .b1 {
   width: 600px;
   height: 600px;
-  background: #0f3d42;
+  background: rgba(104, 166, 166, 0.05);
   top: -200px;
   left: -100px;
 }
 .b2 {
   width: 500px;
   height: 500px;
-  background: #002529;
+  background: rgba(255, 255, 255, 0.02);
   bottom: -100px;
   right: -100px;
   animation-delay: -5s;
@@ -111,7 +118,7 @@ video {
 .b3 {
   width: 300px;
   height: 300px;
-  background: #22585e;
+  background: rgba(104, 166, 166, 0.03);
   top: 40%;
   left: 40%;
   opacity: 0.2;
@@ -181,6 +188,210 @@ video {
 .section {
   padding: 100px 0;
 }
+
+/* === CURSOR CUSTOMIZADO PREMIUM === */
+body {
+  cursor: none;
+}
+a, button, input, select, textarea, .nav-link, .drop-item {
+  cursor: none;
+}
+
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  background-color: var(--primary);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99999;
+  transform: translate(-50%, -50%);
+  transition: width 0.2s ease, height 0.2s ease, background-color 0.2s ease, border 0.2s ease;
+  box-shadow: 0 0 10px rgba(104, 166, 166, 0.5);
+}
+.custom-cursor.hover {
+  width: 50px;
+  height: 50px;
+  background-color: rgba(104, 166, 166, 0.15);
+  border: 1px solid var(--primary);
+  box-shadow: none;
+}
+
+/* === LIGHT SECTION OVERRIDES === */
+.light-section {
+  background-color: var(--bg-light);
+  color: var(--text-light-main);
+}
+.light-section .section-title h2 {
+  color: var(--text-light-main);
+}
+.light-section .section-title p {
+  color: var(--text-light-muted);
+}
+.light-section .card,
+.light-section .glass,
+.light-section .glass-active,
+.light-section .feature-visual,
+.light-section .price-card,
+.light-section .faq-item,
+.light-section .criteria-card,
+.light-section .step-card {
+  background: var(--surface-light);
+  border-color: var(--border-light);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+.light-section .glass-active::after {
+  background: var(--surface-light);
+}
+.light-section .feature-list li,
+.light-section .metrics,
+.light-section p,
+.light-section .desc,
+.light-section .p-features li,
+.light-section .step-tag {
+  color: var(--text-light-muted);
+}
+.light-section h3,
+.light-section h4 {
+  color: var(--text-light-main);
+}
+.light-section .feature-list li strong,
+.light-section .p-features li strong {
+  color: var(--text-light-main);
+}
+.light-section .icon-glow i,
+.light-section .icon-box i,
+.light-section .p-features li i {
+  color: var(--primary);
+}
+.light-section .btn-secondary,
+.light-section .btn-outline {
+  border-color: var(--border-light);
+  color: var(--text-light-main);
+}
+.light-section .btn-secondary:hover,
+.light-section .btn-outline:hover {
+  background: var(--bg);
+  color: #fff;
+}
+.light-section .btn-primary {
+  background: var(--bg);
+  color: #fff;
+  border-color: var(--bg);
+}
+.light-section .btn-primary:hover {
+  background: var(--text-light-muted);
+}
+.light-section .price {
+  color: var(--text-light-main);
+}
+.light-section .plan-name {
+  color: var(--text-light-muted);
+}
+
+/* Fixes Específicos do Modo Claro */
+.light-section .timeline::before {
+  border-left-color: var(--border-light);
+}
+.light-section .step-num {
+  background: var(--surface-light);
+  border-color: var(--primary);
+  color: var(--primary);
+}
+.light-section .step-tag {
+  background: rgba(0,0,0,0.05);
+}
+.light-section .step-marker {
+  background: var(--bg-light);
+}
+.light-section .marker-dot {
+  background: #fff;
+  border-color: #ccc;
+  box-shadow: 0 0 0 5px var(--bg-light);
+}
+.light-section .marker-dot.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  box-shadow: 0 0 15px var(--primary-glow), 0 0 0 5px var(--bg-light);
+}
+.light-section .step-icon {
+  background: rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.1);
+  color: var(--text-light-main);
+}
+.light-section .step-card.active-border {
+  background: linear-gradient(180deg, var(--surface-light) 0%, rgba(104, 166, 166, 0.08) 100%);
+}
+.light-section .flow-arrow i {
+  color: var(--text-light-muted);
+}
+.light-section .asset-terminal,
+.light-section .dashboard-preview {
+  background: #111;
+  color: #fff;
+}
+.light-section .asset-terminal .m-label {
+  color: #aaa;
+}
+
+/* Fixes Extras do Modo Claro (Cards, Automação) */
+.light-section .stage-header h4 {
+  color: var(--text-light-main);
+}
+.light-section .code-snippet {
+  color: #333;
+}
+.light-section .code-snippet .c-yellow {
+  color: #b45309; 
+}
+.light-section .code-snippet .c-green {
+  color: #15803d;
+}
+.light-section .code-snippet .c-blue {
+  color: #1d4ed8; 
+}
+.light-section .code-snippet .c-gray {
+  color: #888;
+}
+.light-section .engine-status {
+  color: var(--text-light-main);
+}
+.light-section .engine-tasks li {
+  color: var(--text-light-muted);
+}
+.light-section .action-item span {
+  color: var(--text-light-muted);
+}
+
+/* Card Central Escuro (Níveis de Acesso) */
+.light-section .price-card.active {
+  background: #111;
+  border-color: var(--primary);
+}
+.light-section .price-card.active .plan-name,
+.light-section .price-card.active .p-features li,
+.light-section .price-card.active .p-desc {
+  color: #aaa;
+}
+.light-section .price-card.active h3,
+.light-section .price-card.active .price,
+.light-section .price-card.active .p-features li strong {
+  color: #fff;
+}
+.light-section .price-card.active .p-features li i {
+  color: var(--primary);
+}
+.light-section .price-card.active .btn-primary {
+  background: #fff;
+  color: #000;
+  border-color: #fff;
+}
+.light-section .price-card.active .btn-primary:hover {
+  background: var(--primary);
+  border-color: var(--primary);
+}
 .glass {
   background: var(--surface);
   backdrop-filter: blur(12px);
@@ -220,6 +431,10 @@ video {
   border-radius: 100px;
   z-index: 1000;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  background: rgba(17, 17, 17, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 .nav-logo {
   position: relative;
@@ -308,6 +523,24 @@ video {
 .hero {
   text-align: center;
   padding: 180px 0 100px;
+  position: relative;
+  z-index: 1;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('assets/pawel-czerwinski-5mhH4db_79I-unsplash.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.25;
+  z-index: -1;
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
 }
 .badge-pill {
   display: inline-flex;
@@ -315,8 +548,8 @@ video {
   gap: 8px;
   font-size: 0.8rem;
   padding: 6px 12px;
-  background: rgba(97, 164, 172, 0.1);
-  border: 1px solid rgba(97, 164, 172, 0.2);
+  background: rgba(104, 166, 166, 0.1);
+  border: 1px solid rgba(104, 166, 166, 0.2);
   border-radius: 20px;
   color: var(--primary);
   margin-bottom: 24px;
@@ -502,11 +735,11 @@ h1 {
   font-weight: 700;
   text-transform: uppercase;
   color: var(--primary);
-  border: 1px solid rgba(97, 164, 172, 0.3);
+  border: 1px solid rgba(104, 166, 166, 0.3);
   padding: 4px 8px;
   border-radius: 4px;
   margin-bottom: 15px;
-  background: rgba(97, 164, 172, 0.05);
+  background: rgba(104, 166, 166, 0.05);
 }
 .metrics {
   margin-top: 15px;
@@ -717,7 +950,7 @@ h1 {
 .skeleton-hero {
   width: 100%;
   height: 50px;
-  background: linear-gradient(135deg, rgba(97, 164, 172, 0.2), transparent);
+  background: linear-gradient(135deg, rgba(104, 166, 166, 0.2), transparent);
   border-radius: 4px;
 }
 .skeleton-text {
@@ -799,7 +1032,7 @@ h1 {
   font-weight: 700;
   letter-spacing: 1px;
   color: var(--primary);
-  border: 1px solid rgba(97, 164, 172, 0.3);
+  border: 1px solid rgba(104, 166, 166, 0.3);
   padding: 4px 10px;
   border-radius: 20px;
   margin-bottom: 15px;
@@ -971,11 +1204,11 @@ h1 {
   border-color: var(--primary);
 }
 .step-card.active-border {
-  border-color: rgba(97, 164, 172, 0.5);
+  border-color: rgba(104, 166, 166, 0.5);
   background: linear-gradient(
     180deg,
     var(--surface) 0%,
-    rgba(97, 164, 172, 0.05) 100%
+    rgba(104, 166, 166, 0.05) 100%
   );
 }
 .step-icon {
@@ -997,10 +1230,10 @@ h1 {
   text-transform: uppercase;
   letter-spacing: 0.5px;
   color: var(--primary);
-  background: rgba(97, 164, 172, 0.1);
+  background: rgba(104, 166, 166, 0.1);
   padding: 4px 10px;
   border-radius: 4px;
-  border: 1px solid rgba(97, 164, 172, 0.2);
+  border: 1px solid rgba(104, 166, 166, 0.2);
 }
 
 .criteria-card {
@@ -1085,7 +1318,7 @@ h1 {
   height: 100%;
   background: radial-gradient(
     circle at top center,
-    rgba(97, 164, 172, 0.15),
+    rgba(104, 166, 166, 0.15),
     transparent 70%
   );
   z-index: 0;
@@ -1241,7 +1474,7 @@ h1 {
 .icon-box.small.active {
   color: var(--primary);
   border-color: var(--primary);
-  background: rgba(97, 164, 172, 0.1);
+  background: rgba(104, 166, 166, 0.1);
 }
 .icon-box.small.green {
   color: #4ade80;
@@ -1257,7 +1490,7 @@ h1 {
 }
 .stage-card.main-engine {
   border-color: var(--primary);
-  box-shadow: 0 0 30px rgba(97, 164, 172, 0.1);
+  box-shadow: 0 0 30px rgba(104, 166, 166, 0.1);
   position: relative;
   overflow: hidden;
 }
@@ -1266,7 +1499,7 @@ h1 {
   inset: 0;
   background: radial-gradient(
     circle,
-    rgba(97, 164, 172, 0.1) 0%,
+    rgba(104, 166, 166, 0.1) 0%,
     transparent 70%
   );
 }
@@ -1304,7 +1537,7 @@ h1 {
   color: #4ade80;
 }
 .c-blue {
-  color: #61a4ac;
+  color: #68a6a6;
 }
 .engine-status {
   display: flex;
@@ -1462,7 +1695,7 @@ h1 {
   height: 60%;
   background: radial-gradient(
     circle,
-    rgba(97, 164, 172, 0.15) 0%,
+    rgba(104, 166, 166, 0.15) 0%,
     transparent 70%
   );
   z-index: 0;
@@ -1521,11 +1754,11 @@ h1 {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  box-shadow: 0 0 20px rgba(97, 164, 172, 0.2);
+  box-shadow: 0 0 20px rgba(104, 166, 166, 0.2);
 }
 .btn-primary.big:hover {
   transform: translateY(-2px);
-  box-shadow: 0 0 30px rgba(97, 164, 172, 0.4);
+  box-shadow: 0 0 30px rgba(104, 166, 166, 0.4);
 }
 .cta-note {
   font-size: 0.85rem !important;
@@ -2143,6 +2376,153 @@ h1 {
   color: #666;
   margin-top: 10px;
 }
+
+/* =========================================
+   9. TESTIMONIALS (DEPOIMENTOS)
+   ========================================= */
+.testimonial-section {
+  padding: 120px 0;
+}
+.testimonial-layout {
+  display: grid;
+  grid-template-columns: 1fr 2.5fr;
+  gap: 80px;
+}
+.testimo-sidebar {
+  display: flex;
+  flex-direction: column;
+  padding-right: 20px;
+}
+.testimo-tag {
+  color: var(--text-light-muted);
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 40px;
+  display: block;
+}
+.testimo-desc {
+  color: var(--text-light-muted);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 60px;
+}
+.testimo-badges {
+  display: flex;
+  gap: 15px;
+  margin-top: auto;
+}
+.badge-mockup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 90px;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  background: var(--surface-light);
+  color: var(--text-light-main);
+}
+.badge-mockup i {
+  font-size: 1.8rem;
+  color: var(--primary);
+  margin-bottom: 5px;
+}
+.badge-mockup span {
+  font-size: 0.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.testimo-content {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.testimo-quote-icon {
+  position: absolute;
+  top: 0;
+  left: -80px;
+  font-size: 4.5rem;
+  color: var(--text-light-main);
+  line-height: 1;
+}
+.testimo-text {
+  font-size: 2.2rem;
+  font-weight: 500;
+  color: var(--text-light-main);
+  line-height: 1.4;
+  margin-bottom: 40px;
+  letter-spacing: -0.5px;
+}
+.testimo-text strong {
+  color: var(--primary);
+}
+.testimo-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 30px;
+  border-top: 1px solid var(--border-light);
+}
+.testimo-author {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.author-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: #ccc;
+  overflow: hidden;
+}
+.author-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.author-info {
+  display: flex;
+  flex-direction: column;
+}
+.author-info strong {
+  font-size: 1.1rem;
+  color: var(--text-light-main);
+}
+.author-info span {
+  font-size: 0.85rem;
+  color: var(--text-light-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.testimo-nav {
+  display: flex;
+  gap: 10px;
+}
+.t-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-light-muted);
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 5px;
+  transition: 0.2s;
+}
+.t-btn:hover {
+  color: var(--text-light-main);
+  transform: translateX(2px);
+}
+.t-btn.prev:hover {
+  transform: translateX(-2px);
+}
+
 
 /* =================================================================
    CORREÇÃO DA DISTORÇÃO E RESPONSIVIDADE (MOBILE FIX)

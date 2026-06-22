@@ -175,4 +175,27 @@ document.addEventListener("DOMContentLoaded", () => {
   // Isso garante que onclick="openEducation()" funcione mesmo dentro do DOMContentLoaded
   window.openEducation = openEducation;
   window.closeEducation = closeEducation;
+
+  // =========================================
+  // 6. CURSOR CUSTOMIZADO
+  // =========================================
+  const cursor = document.querySelector(".custom-cursor");
+  if (cursor) {
+    document.addEventListener("mousemove", (e) => {
+      cursor.style.left = e.clientX + "px";
+      cursor.style.top = e.clientY + "px";
+    });
+
+    // Adiciona hover class em links e elementos clicáveis
+    const hoverElements = document.querySelectorAll("a, button, input, textarea, .card, .glass-active, .step-card, .criteria-card, .price-card, .faq-item");
+    
+    hoverElements.forEach((el) => {
+      el.addEventListener("mouseenter", () => {
+        cursor.classList.add("hover");
+      });
+      el.addEventListener("mouseleave", () => {
+        cursor.classList.remove("hover");
+      });
+    });
+  }
 });
