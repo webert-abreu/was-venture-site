@@ -808,9 +808,9 @@
     <section class="section light-section">
       <div class="container">
         <div class="section-title">
-          <h2>O Fluxo de Automação</h2>
+          <h2>O Fluxo de um Lançamento</h2>
           <p>
-            Do gatilho à execução: como sua operação roda no piloto automático.
+            Da captura do lead à venda acelerada: como sua operação roda no piloto automático.
           </p>
         </div>
 
@@ -818,21 +818,17 @@
           <div class="flow-stage input">
             <div class="stage-header">
               <div class="icon-box small">
-                <i class="ph ph-arrow-fat-line-right"></i>
+                <i class="ph ph-magnet"></i>
               </div>
-              <h4>Input Externo</h4>
+              <h4>Origem (Captura)</h4>
             </div>
             <div class="stage-card glass">
-              <div class="card-badge orange">Webhook Recebido</div>
+              <div class="card-badge orange">Novo Lead Imobiliário</div>
               <div class="code-snippet">
-                <span class="c-gray">// Pagamento Stripe</span><br />
-                {<br />
-                &nbsp;&nbsp;"event":
-                <span class="c-yellow">"charge.succeeded"</span>,<br />
-                &nbsp;&nbsp;"amount": <span class="c-green">25000</span>,<br />
-                &nbsp;&nbsp;"user_id": <span class="c-blue">"cli_998sa"</span
-                ><br />
-                }
+                <span class="c-gray">// Fontes de Aquisição</span><br />
+                > <span class="c-blue">Meta Ads</span> (Campanhas)<br />
+                > <span class="c-green">Landing Pages</span> (SSG)<br />
+                > <span class="c-orange">Portais Imobiliários</span><br />
               </div>
             </div>
           </div>
@@ -847,17 +843,17 @@
           <div class="flow-stage processing">
             <div class="stage-header">
               <div class="icon-box small active"><i class="ph ph-cpu"></i></div>
-              <h4>WAS Engine (Core)</h4>
+              <h4>WAS Engine (O Motor)</h4>
             </div>
             <div class="stage-card glass-active main-engine">
               <div class="glow-bg-center"></div>
               <div class="engine-status">
-                <i class="ph ph-spinner-gap spin"></i> Processando Regras...
+                <i class="ph ph-spinner-gap spin"></i> Triagem e Distribuição...
               </div>
               <ul class="engine-tasks">
-                <li><i class="ph ph-check"></i> Validar Assinatura</li>
-                <li><i class="ph ph-check"></i> Consultar Base de Dados</li>
-                <li><i class="ph ph-arrows-clockwise"></i> Disparar Ações</li>
+                <li><i class="ph ph-check"></i> Qualificação do Lead</li>
+                <li><i class="ph ph-check"></i> Envio p/ Corretor da Vez</li>
+                <li><i class="ph ph-arrows-clockwise"></i> Integração de Sistemas</li>
               </ul>
             </div>
           </div>
@@ -874,22 +870,22 @@
               <div class="icon-box small green">
                 <i class="ph ph-check-circle"></i>
               </div>
-              <h4>Resultados de Negócio</h4>
+              <h4>Venda Acelerada</h4>
             </div>
             <div class="stage-card glass">
-              <div class="card-badge green">Execução Concluída</div>
+              <div class="card-badge green">Resultado Comercial</div>
               <div class="output-actions">
                 <div class="action-item success">
                   <i class="ph ph-database"></i>
-                  <span>CRM Atualizado (+R$25k)</span>
-                </div>
-                <div class="action-item success">
-                  <i class="ph ph-user-plus"></i>
-                  <span>Acesso SaaS Liberado</span>
+                  <span>Lead no CRM (CV / Facilita)</span>
                 </div>
                 <div class="action-item success">
                   <i class="ph ph-whatsapp-logo"></i>
-                  <span>Msg de Boas-vindas Enviada</span>
+                  <span>Corretor Notificado (WhatsApp)</span>
+                </div>
+                <div class="action-item success">
+                  <i class="ph ph-presentation-chart"></i>
+                  <span>Dashboard Atualizado</span>
                 </div>
               </div>
             </div>

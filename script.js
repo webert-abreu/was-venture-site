@@ -116,7 +116,14 @@ document.addEventListener("DOMContentLoaded", () => {
   elementsToAnimate.forEach((el) => {
     el.style.opacity = "0";
     el.style.transform = "translateY(30px)";
-    el.style.transition = "opacity 0.6s ease-out, transform 0.6s ease-out";
+    
+    // Animação em cascata para o Fluxo (stagger effect)
+    let delay = "0s";
+    if (el.classList.contains("input")) delay = "0.1s";
+    if (el.classList.contains("processing")) delay = "0.4s";
+    if (el.classList.contains("output")) delay = "0.7s";
+
+    el.style.transition = `opacity 0.6s ease-out ${delay}, transform 0.6s ease-out ${delay}`;
     observer.observe(el);
   });
 
