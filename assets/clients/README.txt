@@ -1,0 +1,3 @@
+Coloque os logos (PNG/SVG) nesta pasta.
+Exemplo: logo1.png, logo2.png, logo3.png...
+Tente manter os logos na mesma proporção de altura (ex: 40px) e preferencialmente com fundo transparente e cores claras ou monocromáticas (branco/cinza) para combinar com o layout escuro.

@@ -908,6 +908,44 @@ h1 {
 }
 
 /* =========================================
+   6.1 CLIENT LOGOS
+   ========================================= */
+.clients-section {
+  padding: 40px 0;
+}
+.clients-title {
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: var(--text-muted);
+  margin-bottom: 30px;
+}
+.clients-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.clients-track {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 60px;
+}
+.client-logo {
+  height: 40px;
+  object-fit: contain;
+  opacity: 0.5;
+  filter: grayscale(100%);
+  transition: opacity 0.3s ease;
+}
+.client-logo:hover {
+  opacity: 1;
+}
+
+/* =========================================
    7. CARDS & VENTURES
    ========================================= */
 .section-title {
@@ -3053,5 +3091,176 @@ h1 {
   }
   .book-cover {
     margin: 0 auto;
+  }
+}
+
+/* =========================================
+   NEW: Transform Section (High-End Services)
+   ========================================= */
+.transform-section {
+  padding: 80px 0;
+  background: transparent;
+}
+.transform-subtitle {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  margin-bottom: 5px;
+  text-align: center;
+}
+.transform-title {
+  font-size: 2.8rem;
+  font-weight: 400;
+  color: var(--text-main);
+  text-align: center;
+}
+.transform-title strong {
+  font-weight: 700;
+}
+.transform-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-top: 50px;
+}
+.transform-card {
+  background: var(--surface);
+  border-radius: 16px;
+  padding: 40px;
+  border: 1px solid var(--border);
+  box-shadow: inset 0 0 20px rgba(104, 166, 166, 0.02);
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  position: relative;
+  overflow: hidden;
+}
+.transform-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(104, 166, 166, 0.1), transparent);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+.transform-card:hover {
+  border-color: rgba(104, 166, 166, 0.4);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+.transform-card:hover::before {
+  opacity: 1;
+}
+.tc-header {
+  margin-bottom: 30px;
+  position: relative;
+  z-index: 2;
+}
+.tc-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 6px 14px;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.02);
+}
+.dot.green {
+  width: 6px;
+  height: 6px;
+  background: var(--primary);
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: 0 0 8px var(--primary);
+}
+.tc-title {
+  font-size: 2.2rem;
+  font-weight: 500;
+  line-height: 1.25;
+  color: var(--text-main);
+  letter-spacing: -0.5px;
+}
+.highlight-blue {
+  background: transparent;
+  color: var(--primary);
+  display: inline-block;
+}
+.tc-body {
+  position: relative;
+  z-index: 2;
+}
+.tc-item {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 30px;
+  align-items: flex-start;
+  padding: 20px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  transition: 0.3s;
+}
+.tc-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(104, 166, 166, 0.2);
+}
+.tc-item:last-child {
+  margin-bottom: 0;
+}
+.tc-icon {
+  width: 48px;
+  height: 48px;
+  background: rgba(104, 166, 166, 0.1);
+  border: 1px solid rgba(104, 166, 166, 0.2);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: var(--primary);
+  flex-shrink: 0;
+}
+.tc-content h4 {
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: #fff;
+  margin-bottom: 6px;
+}
+.tc-content p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+.tc-link {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--primary);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: 0.3s;
+}
+.tc-link::after {
+  content: "→";
+  transition: 0.3s;
+}
+.tc-link:hover {
+  color: #fff;
+}
+.tc-link:hover::after {
+  transform: translateX(4px);
+}
+
+@media (max-width: 991px) {
+  .transform-grid {
+    grid-template-columns: 1fr;
   }
 }
